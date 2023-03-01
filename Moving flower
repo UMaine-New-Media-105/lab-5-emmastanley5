@@ -1,0 +1,52 @@
+let x;
+let speedX;
+let y;
+let speedY;
+
+function setup() {
+  createCanvas(400, 400);
+  x = 10;
+  speedX = 2;
+  y= 10;
+  speedY=2;
+}
+
+function draw() {
+  background("pink");
+
+  addFlower(x, y, 0.5);
+
+  x = x + speedX;
+  y = y + speedY;
+
+  if (x > 190) {
+    speedX = -2;
+   }
+   if (x < 0) {
+     speedX = 2;
+   }
+  if ( y > 200){
+    speedY = -2;
+  }
+  if (y < 0){
+    speedY = 2;
+  }
+}
+function addFlower(x, y, sizeFactor) {
+  translate(x,y)
+  scale(sizeFactor);
+  fill("skyblue");
+
+  ellipse(180, 125, 70);
+  ellipse(225, 130, 70);
+  ellipse(240, 180, 70);
+  ellipse(215, 230, 70);
+  ellipse(160, 225, 70);
+  ellipse(140, 150, 70);
+
+  ellipse(135, 180, 70);
+  fill("yellow");
+  ellipse(190, 180, 70);
+  fill("green");
+  rect(180, 250, 10, 200);
+}
